@@ -1,0 +1,12 @@
+{% if request.user.is_superuser %}
+{% endif %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'courses:course_create' %}">
+        Create new course
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'courses:contact' %}">
+        Contacts
+    </a>
+</li>

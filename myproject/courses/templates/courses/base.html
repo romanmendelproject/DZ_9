@@ -1,0 +1,15 @@
+{% extends 'root.html' %}
+{% load static %}
+
+{% block title %}
+    {{ block.super }} / {{ title }}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/jquery.formset.js' %}"></script>
+{% endblock %}
+
+{% block main_menu %}
+    {% include 'courses/inc/inc__main_menu.html' %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Сourse list</h1>
+    <div class="courses-list">
+        <ul>
+            {% for course in object_list %}
+                <li>
+                    <a href="{% url 'courses:course' course.pk %}">
+                        {{ course.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

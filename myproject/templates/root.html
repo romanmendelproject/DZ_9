@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            Otus Courses
+        {% endblock %}
+    </title>
+
+    {% block css %}
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    {% endblock %}
+
+    {% block js %}
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% endblock %}
+</head>
+
+<body>
+<div class="wrapper">
+    {% block header %}
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin:24px 0;">
+                <a class="navbar-brand" href="{% url 'courses:index' %}">Otus Courses</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        data-target="#navb">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navb">
+                    <ul class="navbar-nav mr-auto">
+                        {% block main_menu %}{% endblock %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    {% endblock %}
+
+    <div class="main_container">
+        {% block breadcrumb %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+
+</html>

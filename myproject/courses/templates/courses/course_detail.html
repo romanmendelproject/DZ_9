@@ -1,0 +1,30 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="course-record">
+        <h2>{{ course.title }}</h2>
+        <h3>Teacher: {{ course.teacher }}</h3>
+        <h4>Students: </h4>
+        <p>{% for student in course.students.all %}{{ student }}</p>{% endfor %}
+        <h4>Timetable</h4>
+        {% for lesson in course.lesson.all %}
+        <h5>Lesson:</h5>
+        <p>{{ lesson.title }}</p>
+        <p>{{ lesson.description }}</p>
+        <p>Date: {{ lesson.date }}</p>
+        {% endfor %}
+    </div>
+    <div class="links">
+        <div class="link">
+            <a href="{% url 'courses:course_update' course.pk %}">
+                edit
+            </a>
+        </div>
+        <div class="link">
+            <a href="{% url 'courses:course_delete' course.pk %}">
+                delete
+            </a>
+        </div>
+    </div>
+{% endblock %}

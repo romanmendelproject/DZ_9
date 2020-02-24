@@ -1,0 +1,14 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="course-record-delete-form">
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="delete {{ object.title }}?">
+        </form>
+        <button>
+            <a href="{% url 'courses:index' %}">cancel</a>
+        </button>
+    </div>
+{% endblock %}
