@@ -16,6 +16,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "courses",
     "django_rq",
+    'rest_framework',
+    'coursesapi',
+    'rest_framework.authtoken',
 ]
 
 if DEBUG:
@@ -102,5 +105,12 @@ EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = 'owpdjangotest@gmail.com'
 
 RQ_SHOW_ADMIN_LINK = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
+
+    ],
+}
 
 from myproject.local_settings import *

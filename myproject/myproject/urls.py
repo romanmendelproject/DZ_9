@@ -6,7 +6,8 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('courses.urls', namespace='courses')),
-    path('django-rq/', include('django_rq.urls'))
+    path('django-rq/', include('django_rq.urls')),
+    path('coursesapi/', include('coursesapi.urls'))
 ]
 if settings.DEBUG:
     import debug_toolbar
