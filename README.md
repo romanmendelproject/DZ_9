@@ -1,2 +1,2 @@
 # DZ_9
-Django-RQ
+Django-RQ + rest + auth
