@@ -11,18 +11,15 @@ class TeacherViewSet(viewsets.ModelViewSet):
 
 
 class StudentViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated, )
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
 
 class CourseViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated, )
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
 
 class LessonViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated, )
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer

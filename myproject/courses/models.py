@@ -41,7 +41,7 @@ class Student(PersonMixin):
 class Course(models.Model):
     title = models.CharField(max_length=50)
     teacher = models.ForeignKey(Teacher, on_delete=models.SET_NULL, null=True, related_name="course")
-    students = models.ManyToManyField(Student, related_name="course")
+    students = models.ManyToManyField(Student, related_name="course",)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
