@@ -1,9 +1,7 @@
 from django.contrib.auth.models import User
-from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import (APIRequestFactory, APISimpleTestCase,
-                                 APITestCase, APITransactionTestCase,
-                                 force_authenticate)
+                                 APITestCase, APITransactionTestCase)
 
 from courses.models import Course, Lesson, Student, Teacher
 
