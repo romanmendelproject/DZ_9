@@ -1,6 +1,9 @@
+from datetime import date
+
 from django.contrib.auth.models import User
 from django.db import models
-from datetime import date
+
+
 class PersonMixin(models.Model):
     SEX_MAN = 0
     SEX_WOMAN = 1

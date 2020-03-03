@@ -1,5 +1,4 @@
-from django.urls import path, re_path, include
-
+from django.urls import include, path, re_path
 import courses.views as courses
 from courses import views
 

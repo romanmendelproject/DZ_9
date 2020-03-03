@@ -1,8 +1,9 @@
+from django.conf import settings
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.conf.urls import url, include
 from graphene_django.views import GraphQLView
+
 from .schema import schema
 
 urlpatterns = [
@@ -17,4 +18,3 @@ if settings.DEBUG:
     urlpatterns += (
         url(r'^__debug__/', include(debug_toolbar.urls)),
     )
-

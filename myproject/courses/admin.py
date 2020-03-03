@@ -1,7 +1,6 @@
 from django.contrib import admin
-from courses.models import Teacher
-from courses.models import Student
-from courses.models import Course, Lesson
+
+from courses.models import Course, Lesson, Student, Teacher
 
 
 @admin.register(Teacher)

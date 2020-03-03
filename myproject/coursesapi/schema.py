@@ -1,7 +1,8 @@
 import graphene
-from courses.models import Teacher
-from graphene_django.types import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
+from graphene_django.types import DjangoObjectType
+
+from courses.models import Teacher
 
 
 class TeacherType(DjangoObjectType):

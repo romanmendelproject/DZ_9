@@ -1,5 +1,6 @@
-from courses.models import Teacher, Student, Course, Lesson
 from rest_framework import serializers
+
+from courses.models import Course, Lesson, Student, Teacher
 
 
 class TeacherSerializer(serializers.ModelSerializer):

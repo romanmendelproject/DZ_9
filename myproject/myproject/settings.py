@@ -1,6 +1,8 @@
 
 import os
 
+from myproject.local_settings import *
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = False
@@ -113,5 +115,3 @@ REST_FRAMEWORK = {
 
     ],
 }
-
-from myproject.local_settings import *

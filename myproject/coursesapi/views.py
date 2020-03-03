@@ -1,7 +1,10 @@
-from courses.models import Teacher, Student, Course, Lesson
-from .serializers import TeacherSerializer, StudentSerializer, CourseSerializer, LessonSerializer
 from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated
+
+from courses.models import Course, Lesson, Student, Teacher
+
+from .serializers import (CourseSerializer, LessonSerializer,
+                          StudentSerializer, TeacherSerializer)
 
 
 class TeacherViewSet(viewsets.ModelViewSet):

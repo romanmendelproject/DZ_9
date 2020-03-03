@@ -1,7 +1,8 @@
-from django.urls import path, include
-from .views import TeacherViewSet, StudentViewSet, CourseViewSet, LessonViewSet
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt import views as jwt_views
+
+from .views import CourseViewSet, LessonViewSet, StudentViewSet, TeacherViewSet
 
 router = DefaultRouter()
 router.register('teacher', TeacherViewSet)

@@ -1,6 +1,9 @@
 from datetime import datetime
+
 import django_rq
+
 from courses.tasks import send_mail_job
+
 
 def send_mail_scheduler(*args, **kwargs):
     scheduler = django_rq.get_scheduler('default')

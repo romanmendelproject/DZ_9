@@ -1,6 +1,7 @@
 from django import forms
 
-from courses.models import Lesson, Course
+from courses.models import Course, Lesson
+
 
 class BlogBaseForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):

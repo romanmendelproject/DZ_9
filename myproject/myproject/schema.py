@@ -1,5 +1,7 @@
 import graphene
+
 from coursesapi.schema import Query as LectureQuery
+
 #from coursesapi.schema import Mutation as LectureMutation
 
 

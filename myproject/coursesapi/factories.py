@@ -1,6 +1,8 @@
 import factory
 from django.contrib.auth.models import User
-from courses.models import Teacher, Student, Course, Lesson
+
+from courses.models import Course, Lesson, Student, Teacher
+
 from .models import Place
 
 

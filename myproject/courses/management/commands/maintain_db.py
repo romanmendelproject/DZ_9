@@ -3,7 +3,8 @@ import random
 from django.contrib.auth.models import User
 from django.core.management import BaseCommand
 from faker import Faker
-from courses.models import Teacher, Student
+
+from courses.models import Student, Teacher
 
 
 class Command(BaseCommand):

@@ -1,17 +1,20 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.forms import inlineformset_factory
-from django.db import transaction
-from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
-from courses.models import Course, Lesson
-from django.urls import reverse_lazy
-from courses.forms import ContactForm, LessonForm
-from django.core.mail import BadHeaderError, send_mail
-from django.contrib import auth
-from django_rq import job
-from courses.tasks import send_mail_job
-from courses.scheduler import send_mail_scheduler
 import time
+
+from django.contrib import auth
+from django.core.mail import BadHeaderError, send_mail
+from django.db import transaction
+from django.forms import inlineformset_factory
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import (
+    CreateView, DeleteView, DetailView, ListView, UpdateView)
+from django_rq import job
+
+from courses.forms import ContactForm, LessonForm
+from courses.models import Course, Lesson
+from courses.scheduler import send_mail_scheduler
+from courses.tasks import send_mail_job
 
 
 class CourseListView(ListView):
