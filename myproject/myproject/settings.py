@@ -38,7 +38,7 @@ MIDDLEWARE = [
 ]
 
 if DEBUG:
-    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+    MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -115,3 +115,5 @@ REST_FRAMEWORK = {
 
     ],
 }
+
+from myproject.local_settings import *
