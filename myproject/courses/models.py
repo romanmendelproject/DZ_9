@@ -11,10 +11,10 @@ class PersonMixin(models.Model):
     (SEX_MAN, 'Man'),
     (SEX_WOMAN, 'Woman')
     )
-    sex = models.PositiveSmallIntegerField(choices=SEX_CHOICES, default=SEX_MAN)
+    #sex = models.PositiveSmallIntegerField(choices=SEX_CHOICES, default=SEX_MAN)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     date_of_birth = models.DateField(blank=True, default=date.today)
-    city = models.CharField(max_length=50)
+    #city = models.CharField(max_length=50)
 
     class Meta:
         abstract = True

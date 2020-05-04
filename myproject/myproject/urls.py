@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('courses.urls', namespace='courses')),
     path('django-rq/', include('django_rq.urls')),
+    path('coursesapi/user/', include('userapi.urls')),
     path('coursesapi/', include('coursesapi.urls')),
     path("graphql/", GraphQLView.as_view(graphiql=True, schema=schema)),
 ]

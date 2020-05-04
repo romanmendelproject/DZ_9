@@ -1,7 +1,6 @@
 
 import os
 
-from myproject.local_settings import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,19 +21,24 @@ INSTALLED_APPS = [
     'coursesapi',
     'rest_framework.authtoken',
     'graphene_django',
+    'corsheaders',
+    'userapi',
 ]
 
 if DEBUG:
     INSTALLED_APPS += ('debug_toolbar',)
 
 MIDDLEWARE = [
+    "django_samesite_none.middleware.SameSiteNoneMiddleware",
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 if DEBUG:
@@ -111,9 +115,29 @@ RQ_SHOW_ADMIN_LINK = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework.authentication.BasicAuthentication',
+    'rest_framework.authentication.SessionAuthentication',
     'rest_framework_simplejwt.authentication.JWTAuthentication',
+
 
     ],
 }
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
+SESSION_COOKIE_SAMESITE = None
+CRSF_COOKIE_SAMESITE = None
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+# # CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:8080',
+# ]
+# CORS_ORIGIN_REGEX_WHITELIST = [
+#     'http://localhost:8080',
+# ]
+CORS_ALLOW_METHODS = ('DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT')
+CORS_ALLOW_HEADERS = (
+    'csrftoken',
+    'content-type',
+    'X-CSRFTOKEN'
+)
 
 from myproject.local_settings import *

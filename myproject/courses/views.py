@@ -33,6 +33,8 @@ class CourseCreateView(CreateView):
 class CourseDetailView(DetailView):
     model = Course
 
+    queryset = Course.objects.prefetch_related('user')
+
 
 class CourseUpdateView(UpdateView):
     model = Course
@@ -67,6 +69,7 @@ class CourseDeleteView(DeleteView):
         self.object.is_active = False
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
+
 
 def contactform(reguest):
     if reguest.method == 'POST':
