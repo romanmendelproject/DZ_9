@@ -29,7 +29,6 @@ if DEBUG:
     INSTALLED_APPS += ('debug_toolbar',)
 
 MIDDLEWARE = [
-    "django_samesite_none.middleware.SameSiteNoneMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
